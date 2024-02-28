@@ -5,7 +5,11 @@ Home Page - Done
 implement Login and registration pages - Done
 Logout functionality - Done
 Session Implementation - Done
-
+Job Page - Done
+Job Details - Done
+Job Details Delete - Done - yet to implement for Recruiter
+Job Details Edit 
+Apply Now 
 
 **Points to implement** 
 

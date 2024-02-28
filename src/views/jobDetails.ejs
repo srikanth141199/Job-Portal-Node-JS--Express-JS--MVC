@@ -1,0 +1,40 @@
+<section class="jobDetails-container">
+    <%if(job){%>
+    <div class="card mb-3">
+        <img src="/images/background.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="card-title"><%= job.jobCategory %> <%= job.designation %> opportunity in <%= job.location %> at <%= job.companyName %></h4>
+          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+            Actively Hiring <a href="/jobUpdate"><i class="fa-solid fa-file-pen"></i></a> <a href="/delete-job/<%= job.id%>"><i class="fa-regular fa-rectangle-xmark"></i></a> 
+          </h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+            <%= job.jobCategory %> <%= job.designation %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+            <%= job.companyName %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+            <i class="fa-solid fa-map-pin"></i> <%= job.location %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+            <i class="fa-solid fa-indian-rupee-sign"></i> <%= job.salary %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+            <i class="fa-solid fa-calendar-days"></i> <%= job.date %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+            <i class="fa-solid fa-building-user"></i> <%= job.positions %>
+          </h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+            <i class="fa-solid fa-users"></i> <%= job.positions %>
+          </h6>
+          <%job.skills.forEach( skill => {%>
+            <button type="button" class="btn btn-outline-info btn_jobs">
+              <%= skill%>
+            </button>
+            <%})%>
+            <a href="/jobApply" class="btn btn-primary" style="display: block;"> Apply Now</a>
+        </div>
+      </div>
+      <%}%>
+</section>

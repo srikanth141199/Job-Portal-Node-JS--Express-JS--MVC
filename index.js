@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 
 import { setLastVisit } from './src/middlewares/lastVisit.middleware.js';
 import { auth } from './src/middlewares/auth.middleware.js';
+
 import UserController from './src/controllers/user.controller.js';
 import JobController from './src/controllers/job.controller.js';
 
@@ -57,6 +58,12 @@ app.get('/logout', usersController.logout);
 //Job routes starts
 
 app.get("/jobs", auth, jobController.getJobDetails);
+
+//Job Details
+app.get("/jobDetails/:id", auth, jobController.getSelectedJobDetails);
+
+//Delete Job
+app.get('/delete-job/:id', auth, jobController.deleteJob)
 
 //Routes
 

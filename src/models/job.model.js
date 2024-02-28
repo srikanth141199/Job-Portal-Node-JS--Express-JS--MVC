@@ -14,6 +14,15 @@ export default class JobModel{
     static getAll(){
         return Jobs;
     }
+
+    static getJobID(id){
+        const job = Jobs.find( job => job.id == id);
+        return job;
+    }
+
+    static delete(id){
+        Jobs = Jobs.filter( job => job.id != id);
+    }
 }
 
 var Jobs = [
@@ -51,7 +60,7 @@ var Jobs = [
         '12-03-2024'
     ),
     new JobModel(
-        2,
+        4,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -62,7 +71,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        5,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -73,7 +82,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        6,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -84,7 +93,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        7,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -95,7 +104,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        8,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -106,7 +115,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        9,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -117,7 +126,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        10,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -128,7 +137,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        11,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -139,7 +148,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        12,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -150,7 +159,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        13,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -161,7 +170,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        14,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -172,7 +181,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        15,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -183,7 +192,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        16,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -194,7 +203,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        17,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -205,7 +214,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        18,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -216,7 +225,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        19,
         'Support',
         'Project Manager',
         'Hyderabad',
@@ -227,7 +236,7 @@ var Jobs = [
         '31-05-2024'
     ),
     new JobModel(
-        2,
+        20,
         'Support',
         'Project Manager',
         'Hyderabad',

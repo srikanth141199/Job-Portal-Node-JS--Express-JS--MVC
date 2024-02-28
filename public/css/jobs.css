@@ -33,7 +33,7 @@
   .btn_jobs {
     margin-right: 5px;
     margin-bottom: 5px;
-    cursor:default;
+    cursor:default !important;
   }
   
   .card-link_jobs {
