@@ -47,6 +47,10 @@ app.post("/login", usersController.postLogin);
 //Register
 app.get("/register", usersController.getRegister);
 app.post("/register", usersController.postRegister);
+
+//Logout
+app.get('/logout', usersController.logout);
+
 //Routes
 
 app.listen(3900, () => {

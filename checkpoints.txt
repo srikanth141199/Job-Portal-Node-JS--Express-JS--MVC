@@ -3,4 +3,5 @@ folder creation
 Layout page - Done
 Home Page - Done
 implement Login and registration pages - Done
-Logout functionality 
+Logout functionality - Done
+Session Implementation
