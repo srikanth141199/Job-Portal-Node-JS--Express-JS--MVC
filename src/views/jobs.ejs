@@ -1,0 +1,87 @@
+<!-- <section class="jobs_container">
+  <%if(jobs){%> <%jobs.forEach(job =>{%>
+  <div class="card card_jobs" style="width: 18rem">
+    <div class="card-body card-body_jobs">
+      <h5 class="card-title card-title_jobs">Actively Hiring</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs"><%= job.companyName %></h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs"><%= job.jobCategory %> <%= job.designation %></h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs"><%= job.location %></h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs"><%= job.salary %></h6>
+      <%job.skills.forEach( skill => {%>
+        <button type="button" class="btn btn-outline-info btn_jobs"><%= skill%></button>
+      <%})%>
+      <a href="/jobDetails" class="btn btn-primary btn-details" style="display: block; width: 100%; text-align: center;">View Details</a>
+
+    </div>
+  </div>
+  <%})%> <%}%>
+  
+</section> -->
+
+<section class="jobs_container">
+  <% if(jobs.length > 0){ %> <% jobs.forEach(job => { %>
+  <div class="card card_jobs" style="width: 18rem">
+    <div class="card-body card-body_jobs">
+      <h5 class="card-title card-title_jobs">Actively Hiring</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+        <%= job.companyName %>
+      </h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+        <%= job.jobCategory %> <%= job.designation %>
+      </h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+        <%= job.location %>
+      </h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+        <%= job.salary %>
+      </h6>
+      <%job.skills.forEach( skill => {%>
+      <button type="button" class="btn btn-outline-info btn_jobs">
+        <%= skill%>
+      </button>
+      <%})%>
+      <a
+        href="/jobDetails"
+        class="btn btn-primary btn-details"
+        style="display: block; width: 100%; text-align: center"
+        >View Details</a
+      >
+    </div>
+  </div>
+  <% }) %> <% } else { %>
+  <p>No jobs found.</p>
+  <% } %>
+</section>
+
+<!-- Pagination -->
+<div class="pagination">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <% for(let i = 1; i <= totalPages; i++) { %>
+      <!-- <a
+        href="/jobs?page=<%= i %>"
+        class="<%= i === currentPage ? 'active' : '' %>"
+        ><%= i %></a
+      > -->
+      <!-- <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li> -->
+      <li class="page-item">
+        <a
+          href="/jobs?page=<%= i %>"
+          class="page-link <%= i === currentPage ? 'active' : '' %>"
+          ><%= i %></a
+        >
+      </li>
+      <!-- <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li> -->
+
+      <% } %>
+    </ul>
+  </nav>
+</div>

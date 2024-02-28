@@ -4,4 +4,11 @@ Layout page - Done
 Home Page - Done
 implement Login and registration pages - Done
 Logout functionality - Done
-Session Implementation
+Session Implementation - Done
+
+
+**Points to implement** 
+
+allow edit, job posting option only for recruiters -> just like logout after click on I'm recruiter add a local as recruiterFlag to true
+
+only job seeker to apply for Job -> just like above

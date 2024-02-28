@@ -6,13 +6,16 @@ import cookieParser from 'cookie-parser';
 
 
 import { setLastVisit } from './src/middlewares/lastVisit.middleware.js';
+import { auth } from './src/middlewares/auth.middleware.js';
 import UserController from './src/controllers/user.controller.js';
+import JobController from './src/controllers/job.controller.js';
 
 const app = express();
 
 //Controllers start here
 
 const usersController = new UserController();
+const jobController = new JobController();
 
 //Controllers end here
 
@@ -50,6 +53,10 @@ app.post("/register", usersController.postRegister);
 
 //Logout
 app.get('/logout', usersController.logout);
+
+//Job routes starts
+
+app.get("/jobs", auth, jobController.getJobDetails);
 
 //Routes
 
