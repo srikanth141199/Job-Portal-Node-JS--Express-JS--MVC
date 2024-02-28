@@ -33,7 +33,6 @@ export default class UserController {
     }
     req.session.userEmail = email;
     res.render('home', {
-      products,
       userEmail: req.session.userEmail,
     });
   }

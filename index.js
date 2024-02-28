@@ -40,6 +40,14 @@ app.set(
 
 app.get("/", setLastVisit, usersController.getHome);
 
+//Login
+app.get("/login", usersController.getLogin);
+app.post("/login", usersController.postLogin);
+
+//Register
+app.get("/register", usersController.getRegister);
+app.post("/register", usersController.postRegister);
+//Routes
 
 app.listen(3900, () => {
     console.log('Server is running on port 3900');

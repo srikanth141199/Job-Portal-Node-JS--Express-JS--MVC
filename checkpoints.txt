@@ -1,3 +1,6 @@
 folder creation
 
-implement Login and registration pages
+Layout page - Done
+Home Page - Done
+implement Login and registration pages - Done
+Logout functionality 
