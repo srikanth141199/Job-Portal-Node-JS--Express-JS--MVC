@@ -44,6 +44,18 @@ app.set(
 
 app.get("/", setLastVisit, usersController.getHome);
 
+//Recruiter Login
+app.get('/recruiter', (req, res) => {
+  req.session.userType = 'recruiter'; // Save user type as 'recruiter' in session
+  res.redirect('/jobs'); // Redirect to the jobs page or any other page
+});
+
+//Job Seeker Login
+app.get('/jobseeker', (req, res) => {
+  req.session.userType = 'jobseeker'; // Save user type as 'jobseeker' in session
+  res.redirect('/jobs'); // Redirect to the jobs page or any other page
+});
+
 //Login
 app.get("/login", usersController.getLogin);
 app.post("/login", usersController.postLogin);
@@ -78,7 +90,7 @@ app.post("/jobApply", auth, jobController.postJobApply);
 
 //404
 app.get("/404", jobController.get404Page);
-
+app.get("/404JobSeeker", jobController.get404JobSeekerPage);
 //Routes
 
 app.listen(3900, () => {
