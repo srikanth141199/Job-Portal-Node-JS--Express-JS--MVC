@@ -140,4 +140,31 @@ export default class JobController {
     get404JobSeekerPage(req, res){
         res.render('404JobSeeker');
     }
+
+    //to load Job Posting Page
+    getJobPost(req, res){
+        if(req.session.userType == 'recruiter'){
+            res.render('jobPost');
+        }
+        else{
+            res.render("404");
+        }
+    }
+    postJobPost(req, res){
+        //console.log(req.body);
+        const {jobCategory, designation, location, companyName, salary, positions, skills, date} = req.body
+        JobModel.addJob(jobCategory, designation, location, companyName, salary, positions, skills, date);
+        const page = parseInt(req.query.page) || 1; // Get the page parameter from the query string, default to 1
+        const limit = 8; // Number of jobs per page
+        const startIndex = (page - 1) * limit;
+        const endIndex = page * limit;
+
+        // Get jobs for the current page
+        var jobs = JobModel.getAll().slice(startIndex, endIndex);
+        const totalJobs = JobModel.getAll().length;
+
+        const totalPages = Math.ceil(totalJobs / limit);
+
+        res.render('jobs', { jobs: jobs, totalPages: totalPages, currentPage: page, userEmail: req.session.userEmail });
+    }
 }

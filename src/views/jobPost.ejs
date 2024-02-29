@@ -1,0 +1,106 @@
+<h1 class="mt-5 mb-4">Post Job</h1>
+
+<form action="/jobPost" method="post">
+    <label for="jobCategorySelect">Job Category:</label>
+    <select
+        id="jobCategorySelect"
+        class="form-select"
+        aria-label="Default select example"
+        name="jobCategory"
+    >
+        <option value="Tech">Tech</option>
+        <option value="Support">Support</option>
+        <option value="Management">Management</option>
+    </select>
+    <label for="jobDesignationSelect">Job Designation:</label>
+    <select
+        id="jobDesignationSelect"
+        class="form-select"
+        aria-label="Default select example"
+        name="designation"
+    >
+        <option value="HR">HR</option>
+        <option value="DevOps">DevOps</option>
+        <option value="SDE">SDE</option>
+        <option value="MERN Developer">MERN Developer</option>
+        <option value="MEAN Developer">MEAN Developer</option>
+        <option value="Full Stack Developer">Full Stack Developer</option>
+        <option value="Backend Developer">Backend Developer</option>
+        <option value="Project Manager">Project Manager</option>
+    </select>
+    <div class="mb-3">
+        <label for="location" class="form-label">Work Location :</label>
+        <input type="text" class="form-control" id="location" name="location">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Company Name : </span>
+        <input type="text" name = "companyName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group">
+        <span class="input-group-text">Salary</span>
+        <input type="text" aria-label="First name" name="salary" class="form-control">
+        <span class="input-group-text">Positions Available</span>
+        <input type="text" aria-label="Last name" name="positions" class="form-control">
+    </div>
+
+    <!-- <fieldset>
+        <legend>Skills:</legend>
+        <label for="reactCheckbox">
+            <input type="checkbox" id="reactCheckbox" name="skills[]" value="React" > React
+        </label><br>
+        <label for="angularCheckbox">
+            <input type="checkbox" id="angularCheckbox" name="skills[]" value="Angular"> Angular
+        </label><br>
+        <label for="javascriptCheckbox">
+            <input type="checkbox" id="javascriptCheckbox" name="skills[]" value="JavaScript" > JavaScript
+        </label><br>
+        <label for="communicationCheckbox">
+            <input type="checkbox" id="communicationCheckbox" name="skills[]" value="Communication"> Communication
+        </label><br>
+        <label for="typescriptCheckbox">
+            <input type="checkbox" id="typescriptCheckbox" name="skills[]" value="TypeScript"> TypeScript
+        </label><br>
+        <label for="htmlCheckbox">
+            <input type="checkbox" id="htmlCheckbox" name="skills[]" value="HTML"> HTML
+        </label><br>
+        <label for="mongoCheckbox">
+            <input type="checkbox" id="mongoCheckbox" name="skills[]" value="Mongo"> Mongo
+        </label><br>
+        <label for="nodejsCheckbox">
+            <input type="checkbox" id="nodejsCheckbox" name="skills[]" value="NodeJS"> NodeJS
+        </label><br>
+        <label for="expressjsCheckbox">
+            <input type="checkbox" id="expressjsCheckbox" name="skills[]" value="ExpressJS"> ExpressJS
+        </label><br>
+        <label for="managementCheckbox">
+            <input type="checkbox" id="managementCheckbox" name="skills[]" value="Management"> Management
+        </label><br>
+        <label for="financeCheckbox">
+            <input type="checkbox" id="financeCheckbox" name="skills[]" value="Finance"> Finance
+        </label><br>
+    </fieldset> -->
+
+    <label for="skillsDropdown">Skills:</label>
+    <select id="skillsDropdown" name="skills[]" multiple>
+        <option value="React">React</option>
+        <option value="Angular">Angular</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Communication">Communication</option>
+        <option value="TypeScript">TypeScript</option>
+        <option value="HTML">HTML</option>
+        <option value="Mongo">Mongo</option>
+        <option value="NodeJS">NodeJS</option>
+        <option value="ExpressJS">ExpressJS</option>
+        <option value="Management">Management</option>
+        <option value="Finance">Finance</option>
+    </select>
+
+    
+    
+    <div class="mb-3">
+        <label for="date">Select a date:</label>
+        <input type="date" id="date" name="date">
+    </div>
+    
+    <button type="submit" class="btn btn-outline-info">Post Job Details</button>
+</form>

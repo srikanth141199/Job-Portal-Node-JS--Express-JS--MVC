@@ -91,6 +91,10 @@ app.post("/jobApply", auth, jobController.postJobApply);
 //404
 app.get("/404", jobController.get404Page);
 app.get("/404JobSeeker", jobController.get404JobSeekerPage);
+
+//Post new Job
+app.get("/jobPost", auth, jobController.getJobPost);
+app.post("/jobPost", auth, jobController.postJobPost);
 //Routes
 
 app.listen(3900, () => {

@@ -38,6 +38,23 @@ export default class JobModel{
         Jobs[ind].applicants.push(appObj);
         Jobs[ind].applicantsCount += 1;
     }
+
+    static addJob(jobCategory, designation, location, companyName, salary, positions, skills, date){
+        let newJob = new JobModel(
+            Jobs.length+1,
+            jobCategory,
+            designation,
+            location,
+            companyName,
+            salary,
+            positions,
+            skills,
+            date
+        )
+        Jobs.push(newJob);
+        //console.log('new Job', newJob);
+        //console.log('Updated Jobs List', Jobs);
+    }
 }
 
 
