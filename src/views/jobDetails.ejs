@@ -5,35 +5,35 @@
         <div class="card-body">
           <h4 class="card-title"><%= job.jobCategory %> <%= job.designation %> opportunity in <%= job.location %> at <%= job.companyName %></h4>
           <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
-            Actively Hiring <a href="/jobUpdate"><i class="fa-solid fa-file-pen"></i></a> <a href="/delete-job/<%= job.id%>"><i class="fa-regular fa-rectangle-xmark"></i></a> 
+            Actively Hiring <i class="fa-solid fa-arrow-trend-up"></i>  <a href="/jobUpdate"><i class="fa-solid fa-file-pen"></i></a> <a href="/delete-job/<%= job.id%>"><i class="fa-regular fa-rectangle-xmark"></i></a> 
           </h6>
-          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs"> <i class="fa-solid fa-user-tie"></i>
             <%= job.jobCategory %> <%= job.designation %>
           </h6>
-          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
+          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs"> <i class="fa-regular fa-building"></i>
             <%= job.companyName %>
           </h6>
           <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
             <i class="fa-solid fa-map-pin"></i> <%= job.location %>
           </h6>
           <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
-            <i class="fa-solid fa-indian-rupee-sign"></i> <%= job.salary %>
+            <i class="fa-solid fa-indian-rupee-sign"></i> <%= job.salary %> lpa
           </h6>
           <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
-            <i class="fa-solid fa-calendar-days"></i> <%= job.date %>
+            <i class="fa-solid fa-calendar-days"></i> Apply by <%= job.date %>
           </h6>
           <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
-            <i class="fa-solid fa-building-user"></i> <%= job.positions %>
+            <i class="fa-solid fa-building-user"></i> Number of openings <%= job.positions %>
           </h6>
-          <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
-            <i class="fa-solid fa-users"></i> <%= job.positions %>
-          </h6>
+          <a href="/jobApplicant/<%= job.id%>" class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs" style="display: block;">
+            <i class="fa-solid fa-users"></i> Applicants <%= job.applicantsCount %>
+          </a>
           <%job.skills.forEach( skill => {%>
             <button type="button" class="btn btn-outline-info btn_jobs">
               <%= skill%>
             </button>
             <%})%>
-            <a href="/jobApply" class="btn btn-primary" style="display: block;"> Apply Now</a>
+            <a href="/jobApply/<%= job.id%>" class="btn btn-primary" style="display: block;"> Apply Now</a>
         </div>
       </div>
       <%}%>

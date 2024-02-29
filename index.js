@@ -63,7 +63,10 @@ app.get("/jobs", auth, jobController.getJobDetails);
 app.get("/jobDetails/:id", auth, jobController.getSelectedJobDetails);
 
 //Delete Job
-app.get('/delete-job/:id', auth, jobController.deleteJob)
+app.get('/delete-job/:id', auth, jobController.deleteJob);
+
+//jobApplicats
+app.get("/jobApplicant/:1d", auth, jobController.getJobApplicants);
 
 //Routes
 

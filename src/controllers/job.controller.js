@@ -44,4 +44,11 @@ export default class JobController {
 
         res.render('jobs', { jobs: jobs, totalPages: totalPages, currentPage: page });
     }
+
+    getJobApplicants(req, res){
+        const id = req.params.id;
+        const jobFound = JobModel.getJobID(id);
+        //console.log(jobFound);
+        res.render("jobApplicants", {job: jobFound});
+    }
 }

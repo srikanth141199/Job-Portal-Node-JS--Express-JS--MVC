@@ -10,6 +10,7 @@ Job Details - Done
 Job Details Delete - Done - yet to implement for Recruiter
 Job Details Edit 
 Apply Now 
+Job Applications
 
 **Points to implement** 
 
