@@ -1,13 +1,6 @@
 //this page handles the Job related tasks
 import JobModel from "../models/job.model.js";
 
-// export default class JobController{
-//     getJobDetails(req, res){
-//         var jobs = JobModel.getAll();
-//         res.render('jobs', {jobs:jobs});
-//     }
-// }
-
 export default class JobController {
     getJobDetails(req, res) {
         const page = parseInt(req.query.page) || 1; // Get the page parameter from the query string, default to 1
