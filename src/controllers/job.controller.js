@@ -47,6 +47,7 @@ export default class JobController {
 
     getJobApplicants(req, res){
         const id = req.params.id;
+        //console.log('id :', id);
         const jobFound = JobModel.getJobID(id);
         //console.log(jobFound);
         res.render("jobApplicants", {job: jobFound});

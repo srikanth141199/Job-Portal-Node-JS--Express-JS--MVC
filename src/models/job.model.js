@@ -18,7 +18,9 @@ export default class JobModel{
     }
 
     static getJobID(id){
+        console.log('inside model id :', id);
         const job = Jobs.find( job => job.id == id);
+        console.log('inside model job : ', job);
         return job;
     }
 
