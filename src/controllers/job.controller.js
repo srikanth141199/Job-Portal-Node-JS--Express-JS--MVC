@@ -61,12 +61,13 @@ export default class JobController {
 
     postUpdateJob(req, res){
         //const id = req.params.id;
-        //console.log(req.body);
+        console.log("1 befor applicants update",req.body);
         req.body.applicants = JSON.parse(req.body.applicants);
         req.body.applicantsCount = req.body.applicants.length;
-        //console.log(req.body);
+        console.log("2 after applicants update",req.body);
         JobModel.update(req.body)
         const jobFound = JobModel.getJobID(req.body.id);
+        console.log("3 after updating job details",req.body);
         res.render('jobDetails', {job: jobFound, userEmail: req.session.userEmail});
     }
 
@@ -82,5 +83,9 @@ export default class JobController {
         JobModel.updateApplicants(req.body);
         const jobFound = JobModel.getJobID(req.body.id);
         res.render('jobDetails', {job: jobFound, userEmail: req.session.userEmail});
+    }
+
+    get404Page(req,res){
+        res.render('404');
     }
 }

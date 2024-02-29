@@ -76,6 +76,9 @@ app.post("/jobUpdate", auth, jobController.postUpdateJob);
 app.get("/jobApply/:id", auth, jobController.getJobApply);
 app.post("/jobApply", auth, jobController.postJobApply);
 
+//404
+app.get("/404", jobController.get404Page);
+
 //Routes
 
 app.listen(3900, () => {

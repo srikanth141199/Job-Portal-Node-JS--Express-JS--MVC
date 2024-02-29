@@ -8,7 +8,7 @@ export default class JobModel{
         this.salary = salary;
         this.positions = positions;
         this.skills = skills;
-        this.date = new Date(date);
+        this.date = date;
         this.applicants = applicants;
         this.applicantsCount = applicants.length;
     }
@@ -40,6 +40,8 @@ export default class JobModel{
     }
 }
 
+
+
 var Jobs = [
     new JobModel(
         1,
@@ -50,7 +52,7 @@ var Jobs = [
         '2000000',
         3,
         ['React', 'NodeJS', 'Mongo', 'JS'],
-        '31-03-2024',
+        '2024-03-31',
         [{'name':'John', 'email': 'john@gmail.com', 'contract': '9876543210'}, {'name': 'Alice', 'email': 'alice@gmail.com', 'contract': '1234567890'}, {'name': 'Bob', 'email': 'bob@gmail.com', 'contract': '2345678901'}]
     ),
     new JobModel(
@@ -62,7 +64,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Charlie', 'email': 'charlie@gmail.com', 'contract': '3456789012'}, {'name': 'David', 'email': 'david@gmail.com', 'contract': '4567890123'}]
     ),
     new JobModel(
@@ -74,7 +76,7 @@ var Jobs = [
         '2400000',
         6,
         ['React', 'NodeJS', 'Mongo', 'Express'],
-        '12-03-2024',
+        '2024-05-31',
         [{'name': 'Eve', 'email': 'eve@gmail.com', 'contract': '5678901234'}, {'name': 'Frank', 'email': 'frank@gmail.com', 'contract': '6789012345'}, {'name': 'Bob', 'email': 'bob@gmail.com', 'contract': '2345678901'}]
     ),
     new JobModel(
@@ -86,7 +88,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Grace', 'email': 'grace@gmail.com', 'contract': '7890123456'}, {'name': 'Kate', 'email': 'kate@gmail.com', 'contract': '0987654321'}, {'name': 'Liam', 'email': 'liam@gmail.com', 'contract': '9876543210'}]
     ),
     new JobModel(
@@ -98,7 +100,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Peter', 'email': 'peter@gmail.com', 'contract': '5432109876'}, {'name': 'Kate', 'email': 'kate@gmail.com', 'contract': '0987654321'}, {'name': 'Ivy', 'email': 'ivy@gmail.com', 'contract': '9012345678'}]
     ),
     new JobModel(
@@ -110,7 +112,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Quinn', 'email': 'quinn@gmail.com', 'contract': '4321098765'},
         {'name': 'Ryan', 'email': 'ryan@gmail.com', 'contract': '3210987654'},
         {'name': 'Sarah', 'email': 'sarah@gmail.com', 'contract': '2109876543'},
@@ -125,7 +127,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Frank', 'email': 'frank@gmail.com', 'contract': '6789012345'},
         {'name': 'Grace', 'email': 'grace@gmail.com', 'contract': '7890123456'},
         {'name': 'Harry', 'email': 'harry@gmail.com', 'contract': '8901234567'},
@@ -141,7 +143,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Liam', 'email': 'liam@gmail.com', 'contract': '9876543210'},
         {'name': 'Mia', 'email': 'mia@gmail.com', 'contract': '8765432109'},
         {'name': 'Noah', 'email': 'noah@gmail.com', 'contract': '7654321098'},
@@ -160,7 +162,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Grace', 'email': 'grace@gmail.com', 'contract': '7890123456'},
         {'name': 'Harry', 'email': 'harry@gmail.com', 'contract': '8901234567'}]
     ),
@@ -173,7 +175,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Liam', 'email': 'liam@gmail.com', 'contract': '9876543210'},
         {'name': 'Mia', 'email': 'mia@gmail.com', 'contract': '8765432109'},
         {'name': 'Noah', 'email': 'noah@gmail.com', 'contract': '7654321098'},
@@ -188,7 +190,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'David', 'email': 'david@gmail.com', 'contract': '4567890123'},
         {'name': 'Eve', 'email': 'eve@gmail.com', 'contract': '5678901234'},
         {'name': 'Frank', 'email': 'frank@gmail.com', 'contract': '6789012345'},
@@ -203,7 +205,11 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024'
+        '2024-05-31',
+        [{'name': 'David', 'email': 'david@gmail.com', 'contract': '4567890123'},
+        {'name': 'Eve', 'email': 'eve@gmail.com', 'contract': '5678901234'},
+        {'name': 'Frank', 'email': 'frank@gmail.com', 'contract': '6789012345'},
+        {'name': 'Grace', 'email': 'grace@gmail.com', 'contract': '7890123456'}]
     ),
     new JobModel(
         13,
@@ -214,7 +220,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Kate', 'email': 'kate@gmail.com', 'contract': '0987654321'}]
     ),
     new JobModel(
@@ -226,7 +232,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Harry', 'email': 'harry@gmail.com', 'contract': '8901234567'},
         {'name': 'Ivy', 'email': 'ivy@gmail.com', 'contract': '9012345678'},
         {'name': 'Jack', 'email': 'jack@gmail.com', 'contract': '0123456789'}]
@@ -240,7 +246,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Mia', 'email': 'mia@gmail.com', 'contract': '8765432109'},
         {'name': 'Noah', 'email': 'noah@gmail.com', 'contract': '7654321098'},
         {'name': 'Olivia', 'email': 'olivia@gmail.com', 'contract': '6543210987'}]
@@ -254,7 +260,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Harry', 'email': 'harry@gmail.com', 'contract': '8901234567'},
         {'name': 'Ivy', 'email': 'ivy@gmail.com', 'contract': '9012345678'},
         {'name': 'Jack', 'email': 'jack@gmail.com', 'contract': '0123456789'}]
@@ -268,7 +274,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Olivia', 'email': 'olivia@gmail.com', 'contract': '6543210987'},
         {'name': 'Peter', 'email': 'peter@gmail.com', 'contract': '5432109876'},
         {'name': 'Quinn', 'email': 'quinn@gmail.com', 'contract': '4321098765'}]
@@ -281,8 +287,8 @@ var Jobs = [
         'Amazon',
         1800000,
         1,
-        ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        ['React', 'JavaScript', 'Finance'],
+        '2024-05-31',
         [{'name': 'Bob', 'email': 'bob@gmail.com', 'contract': '2345678901'},
         {'name': 'Charlie', 'email': 'charlie@gmail.com', 'contract': '3456789012'},
         {'name': 'David', 'email': 'david@gmail.com', 'contract': '4567890123'},
@@ -301,7 +307,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         []
     ),
     new JobModel(
@@ -313,7 +319,7 @@ var Jobs = [
         1800000,
         1,
         ['Communication', 'Management', 'Finance'],
-        '31-05-2024',
+        '2024-05-31',
         [{'name': 'Harry', 'email': 'harry@gmail.com', 'contract': '8901234567'}]
     )
 ]
