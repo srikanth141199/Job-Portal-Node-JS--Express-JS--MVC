@@ -75,7 +75,7 @@ app.get("/jobs", auth, jobController.getJobDetails);
 app.get("/jobDetails/:id", auth, jobController.getSelectedJobDetails);
 
 //Delete Job
-app.get('/delete-job/:id', auth, jobController.deleteJob);
+app.post('/delete-job/:id', auth, jobController.deleteJobPost);
 
 //jobApplicats
 app.get("/jobApplicant/:id", auth, jobController.getJobApplicants);

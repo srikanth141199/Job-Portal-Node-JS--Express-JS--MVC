@@ -28,7 +28,7 @@ export default class JobController {
     }
 
     // Delete a job
-    deleteJob(req, res){
+    deleteJobPost(req, res){
         const id = req.params.id;
         if(req.session.userType == 'recruiter'){
             JobModel.delete(id);

@@ -15,11 +15,4 @@ Job Applications - Done
 once applied - need to send mail- Done
 new Job posting - Done
 
-404 
-navigation based on Job seeker, Recruiter
-
-**Points to implement** 
-
-allow edit, job posting option only for recruiters -> just like logout after click on I'm recruiter add a local as recruiterFlag to true
-
-only job seeker to apply for Job -> just like above
+double check before delete - Done
