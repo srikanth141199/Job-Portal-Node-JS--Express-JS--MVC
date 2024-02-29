@@ -69,4 +69,18 @@ export default class JobController {
         const jobFound = JobModel.getJobID(req.body.id);
         res.render('jobDetails', {job: jobFound, userEmail: req.session.userEmail});
     }
+
+    getJobApply(req,res){
+        const id = req.params.id;
+        const jobFound = JobModel.getJobID(id);
+        //console.log("getJobApply",jobFound);
+        res.render("jobApply",{job: jobFound, userEmail: req.session.userEmail})
+    }
+
+    postJobApply(req, res){
+        //console.log(req.body);
+        JobModel.updateApplicants(req.body);
+        const jobFound = JobModel.getJobID(req.body.id);
+        res.render('jobDetails', {job: jobFound, userEmail: req.session.userEmail});
+    }
 }

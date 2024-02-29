@@ -9,9 +9,12 @@ Job Page - Done
 Job Details - Done
 Job Details Delete - Done - yet to implement for Recruiter
 Job Details Edit - Get Done
-Job Details update - Post
-Apply Now 
+Job Details update - Post Done
+Apply Now - Done
 Job Applications - Done
+
+404 
+navigation based on Job seeker, Recruiter
 
 **Points to implement** 
 

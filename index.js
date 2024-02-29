@@ -72,6 +72,10 @@ app.get("/jobApplicant/:id", auth, jobController.getJobApplicants);
 app.get("/jobUpdate/:id", auth, jobController.getUpdateJob);
 app.post("/jobUpdate", auth, jobController.postUpdateJob);
 
+//Job Apply
+app.get("/jobApply/:id", auth, jobController.getJobApply);
+app.post("/jobApply", auth, jobController.postJobApply);
+
 //Routes
 
 app.listen(3900, () => {

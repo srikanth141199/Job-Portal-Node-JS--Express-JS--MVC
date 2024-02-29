@@ -8,7 +8,7 @@ const validateRequest = async (
   res,
   next
 ) => {
-  console.log(req.body);
+  //console.log(req.body);
   // 1. Setup rules for validation.
   const rules = [
     body('name')
@@ -34,7 +34,7 @@ const validateRequest = async (
 
   // 3. check if there are any errors after running the rules.
   var validationErrors = validationResult(req);
-  console.log(validationErrors);
+  //console.log(validationErrors);
   // 4. if errros, return the error message
   if (!validationErrors.isEmpty()) {
     return res.render('new-product', {

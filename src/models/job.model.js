@@ -32,6 +32,12 @@ export default class JobModel{
         const ind = Jobs.findIndex( job => job.id == jobObj.id);
         Jobs[ind] = jobObj;
     }
+
+    static updateApplicants(appObj){
+        const ind = Jobs.findIndex(job => job.id == appObj.id);
+        Jobs[ind].applicants.push(appObj);
+        Jobs[ind].applicantsCount += 1;
+    }
 }
 
 var Jobs = [
