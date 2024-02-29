@@ -9,6 +9,7 @@ import bodyParser from 'body-parser';
 import { setLastVisit } from './src/middlewares/lastVisit.middleware.js';
 import { auth } from './src/middlewares/auth.middleware.js';
 import validateRequestJobApply from './src/middlewares/validation-jobApply.middleware.js';
+import validateRequestJobPost from './src/middlewares/validation-JobPost.middleware.js';
 
 import UserController from './src/controllers/user.controller.js';
 import JobController from './src/controllers/job.controller.js';
@@ -98,7 +99,7 @@ app.get("/404JobSeeker", jobController.get404JobSeekerPage);
 
 //Post new Job
 app.get("/jobPost", auth, jobController.getJobPost);
-app.post("/jobPost", auth, jobController.postJobPost);
+app.post("/jobPost", auth,validateRequestJobPost, jobController.postJobPost);
 //Routes
 
 app.listen(3900, () => {
