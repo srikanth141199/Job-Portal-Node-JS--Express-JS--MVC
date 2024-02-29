@@ -3,10 +3,12 @@ import ejsLayouts from 'express-ejs-layouts';
 import path from 'path';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
 
 
 import { setLastVisit } from './src/middlewares/lastVisit.middleware.js';
 import { auth } from './src/middlewares/auth.middleware.js';
+import validateRequestJobApply from './src/middlewares/validation-jobApply.middleware.js';
 
 import UserController from './src/controllers/user.controller.js';
 import JobController from './src/controllers/job.controller.js';
@@ -39,6 +41,8 @@ app.set(
   'views',
   path.join(path.resolve(), 'src', 'views')
 );
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //Routes
 
@@ -77,7 +81,7 @@ app.get("/jobDetails/:id", auth, jobController.getSelectedJobDetails);
 //Delete Job
 app.post('/delete-job/:id', auth, jobController.deleteJobPost);
 
-//jobApplicats
+//jobApplicants
 app.get("/jobApplicant/:id", auth, jobController.getJobApplicants);
 
 //JobUpdate
@@ -86,7 +90,7 @@ app.post("/jobUpdate", auth, jobController.postUpdateJob);
 
 //Job Apply
 app.get("/jobApply/:id", auth, jobController.getJobApply);
-app.post("/jobApply", auth, jobController.postJobApply);
+app.post("/jobApply", auth,validateRequestJobApply, jobController.postJobApply);
 
 //404
 app.get("/404", jobController.get404Page);

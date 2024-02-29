@@ -14,5 +14,6 @@ Apply Now - Done
 Job Applications - Done
 once applied - need to send mail- Done
 new Job posting - Done
-
 double check before delete - Done
+file Upload
+validations for job addition - Done and if there are any error navigating to Home Page
