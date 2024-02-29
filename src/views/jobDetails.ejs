@@ -5,7 +5,7 @@
         <div class="card-body">
           <h4 class="card-title"><%= job.jobCategory %> <%= job.designation %> opportunity in <%= job.location %> at <%= job.companyName %></h4>
           <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs">
-            Actively Hiring <i class="fa-solid fa-arrow-trend-up"></i>  <a href="/jobUpdate"><i class="fa-solid fa-file-pen"></i></a> <a href="/delete-job/<%= job.id%>"><i class="fa-regular fa-rectangle-xmark"></i></a> 
+            Actively Hiring <i class="fa-solid fa-arrow-trend-up"></i>  <a href="/jobUpdate/<%= job.id%>"><i class="fa-solid fa-file-pen"></i></a> <a href="/delete-job/<%= job.id%>"><i class="fa-regular fa-rectangle-xmark"></i></a> 
           </h6>
           <h6 class="card-subtitle mb-2 text-body-secondary card-subtitle_jobs"> <i class="fa-solid fa-user-tie"></i>
             <%= job.jobCategory %> <%= job.designation %>

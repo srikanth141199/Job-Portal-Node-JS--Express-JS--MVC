@@ -1,0 +1,97 @@
+<h1 class="mt-5 mb-4">Update Job</h1>
+
+<form action="/jobUpdate" method="post">
+  <%if(job){%>
+    <input type="hidden" name="id" value="<%= job.id %>">
+    <input type="hidden" name="applicants" value="<%= JSON.stringify(job.applicants) %>">
+    <label for="jobCategorySelect">Job Category:</label>
+    <select
+        id="jobCategorySelect"
+        class="form-select"
+        aria-label="Default select example"
+        name="jobCategory"
+    >
+        <option selected><%= job.jobCategory%></option>
+        <option value="1">Tech</option>
+        <option value="2">Support</option>
+        <option value="3">Management</option>
+    </select>
+    <label for="jobDesignationSelect">Job Designation:</label>
+    <select
+        id="jobDesignationSelect"
+        class="form-select"
+        aria-label="Default select example"
+        name="designation"
+    >
+        <option selected><%= job.designation%></option>
+        <option value="1">HR</option>
+        <option value="2">DevOps</option>
+        <option value="3">SDE</option>
+        <option value="4">MERN Developer</option>
+        <option value="5">MEAN Developer</option>
+        <option value="6">Full Stack Developer</option>
+        <option value="7">Backend Developer</option>
+        <option value="8">Project Manager</option>
+    </select>
+    <div class="mb-3">
+        <label for="location" class="form-label">Work Location :</label>
+        <input type="text" class="form-control" id="location" name="location" value="<%= job.location%>">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Company Name : </span>
+        <input type="text" name = "companyName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="<%= job.companyName%>">
+    </div>
+    <div class="input-group">
+        <span class="input-group-text">Salary</span>
+        <input type="text" aria-label="First name" name="salary" class="form-control" value="<%= job.salary%>">
+        <span class="input-group-text">Position Available</span>
+        <input type="text" aria-label="Last name" name="positions" class="form-control" value="<%= job.positions%>">
+    </div>
+
+    <fieldset>
+        <legend>Skills:</legend>
+        <label for="reactCheckbox">
+            <input type="checkbox" id="reactCheckbox" name="skills[]" value="React" <%= job.skills.includes('React') ? 'checked' : '' %>> React
+        </label><br>
+        <label for="angularCheckbox">
+            <input type="checkbox" id="angularCheckbox" name="skills[]" value="Angular" <%= job.skills.includes('Angular') ? 'checked' : '' %>> Angular
+        </label><br>
+        <label for="javascriptCheckbox">
+            <input type="checkbox" id="javascriptCheckbox" name="skills[]" value="JavaScript" <%= job.skills.includes('JavaScript') ? 'checked' : '' %>> JavaScript
+        </label><br>
+        <label for="communicationCheckbox">
+            <input type="checkbox" id="communicationCheckbox" name="skills[]" value="Communication" <%= job.skills.includes('Communication') ? 'checked' : '' %>> Communication
+        </label><br>
+        <label for="typescriptCheckbox">
+            <input type="checkbox" id="typescriptCheckbox" name="skills[]" value="TypeScript" <%= job.skills.includes('TypeScript') ? 'checked' : '' %>> TypeScript
+        </label><br>
+        <label for="htmlCheckbox">
+            <input type="checkbox" id="htmlCheckbox" name="skills[]" value="HTML" <%= job.skills.includes('HTML') ? 'checked' : '' %>> HTML
+        </label><br>
+        <label for="mongoCheckbox">
+            <input type="checkbox" id="mongoCheckbox" name="skills[]" value="Mongo" <%= job.skills.includes('Mongo') ? 'checked' : '' %>> Mongo
+        </label><br>
+        <label for="nodejsCheckbox">
+            <input type="checkbox" id="nodejsCheckbox" name="skills[]" value="NodeJS" <%= job.skills.includes('NodeJS') ? 'checked' : '' %>> NodeJS
+        </label><br>
+        <label for="expressjsCheckbox">
+            <input type="checkbox" id="expressjsCheckbox" name="skills[]" value="ExpressJS" <%= job.skills.includes('ExpressJS') ? 'checked' : '' %>> ExpressJS
+        </label><br>
+        <label for="managementCheckbox">
+            <input type="checkbox" id="managementCheckbox" name="skills[]" value="Management" <%= job.skills.includes('Management') ? 'checked' : '' %>> Management
+        </label><br>
+        <label for="financeCheckbox">
+            <input type="checkbox" id="financeCheckbox" name="skills[]" value="Finance" <%= job.skills.includes('Finance') ? 'checked' : '' %>> Finance
+        </label><br>
+    </fieldset>
+    
+    
+    <div class="mb-3">
+        <label for="date">Select a date:</label>
+        <input type="date" id="date" name="date" value="<%= job.date%>">
+    </div>
+    
+    <button type="submit" class="btn btn-outline-info">Update Job Details</button>
+    
+  <% }%>
+</form>

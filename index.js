@@ -68,6 +68,10 @@ app.get('/delete-job/:id', auth, jobController.deleteJob);
 //jobApplicats
 app.get("/jobApplicant/:id", auth, jobController.getJobApplicants);
 
+//JobUpdate
+app.get("/jobUpdate/:id", auth, jobController.getUpdateJob);
+app.post("/jobUpdate", auth, jobController.postUpdateJob);
+
 //Routes
 
 app.listen(3900, () => {

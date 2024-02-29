@@ -8,7 +8,7 @@ export default class JobModel{
         this.salary = salary;
         this.positions = positions;
         this.skills = skills;
-        this.date = date;
+        this.date = new Date(date);
         this.applicants = applicants;
         this.applicantsCount = applicants.length;
     }
@@ -18,14 +18,19 @@ export default class JobModel{
     }
 
     static getJobID(id){
-        console.log('inside model id :', id);
+        //console.log('inside model id :', id);
         const job = Jobs.find( job => job.id == id);
-        console.log('inside model job : ', job);
+        //console.log('inside model job : ', job);
         return job;
     }
 
     static delete(id){
         Jobs = Jobs.filter( job => job.id != id);
+    }
+
+    static update(jobObj){
+        const ind = Jobs.findIndex( job => job.id == jobObj.id);
+        Jobs[ind] = jobObj;
     }
 }
 

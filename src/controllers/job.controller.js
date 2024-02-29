@@ -52,4 +52,21 @@ export default class JobController {
         //console.log(jobFound);
         res.render("jobApplicants", {job: jobFound});
     }
+
+    getUpdateJob(req, res){
+        const id = req.params.id;
+        const jobFound = JobModel.getJobID(id);
+        res.render("jobUpdate", {job: jobFound});
+    }
+
+    postUpdateJob(req, res){
+        //const id = req.params.id;
+        //console.log(req.body);
+        req.body.applicants = JSON.parse(req.body.applicants);
+        req.body.applicantsCount = req.body.applicants.length;
+        //console.log(req.body);
+        JobModel.update(req.body)
+        const jobFound = JobModel.getJobID(req.body.id);
+        res.render('jobDetails', {job: jobFound, userEmail: req.session.userEmail});
+    }
 }
