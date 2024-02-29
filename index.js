@@ -74,23 +74,23 @@ app.get('/logout', usersController.logout);
 
 //Job routes starts
 
-app.get("/jobs", auth, jobController.getJobDetails);
+app.get("/jobs", auth, setLastVisit, jobController.getJobDetails);
 
 //Job Details
-app.get("/jobDetails/:id", auth, jobController.getSelectedJobDetails);
+app.get("/jobDetails/:id", auth, setLastVisit, jobController.getSelectedJobDetails);
 
 //Delete Job
 app.post('/delete-job/:id', auth, jobController.deleteJobPost);
 
 //jobApplicants
-app.get("/jobApplicant/:id", auth, jobController.getJobApplicants);
+app.get("/jobApplicant/:id", auth, setLastVisit, jobController.getJobApplicants);
 
 //JobUpdate
-app.get("/jobUpdate/:id", auth, jobController.getUpdateJob);
+app.get("/jobUpdate/:id", auth, setLastVisit, jobController.getUpdateJob);
 app.post("/jobUpdate", auth, jobController.postUpdateJob);
 
 //Job Apply
-app.get("/jobApply/:id", auth, jobController.getJobApply);
+app.get("/jobApply/:id", auth, setLastVisit, jobController.getJobApply);
 app.post("/jobApply", auth,validateRequestJobApply, jobController.postJobApply);
 
 //404
@@ -98,7 +98,7 @@ app.get("/404", jobController.get404Page);
 app.get("/404JobSeeker", jobController.get404JobSeekerPage);
 
 //Post new Job
-app.get("/jobPost", auth, jobController.getJobPost);
+app.get("/jobPost", auth, setLastVisit, jobController.getJobPost);
 app.post("/jobPost", auth,validateRequestJobPost, jobController.postJobPost);
 //Routes
 

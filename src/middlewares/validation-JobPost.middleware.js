@@ -19,7 +19,7 @@ const validateRequestJobPost = async (req, res, next) => {
 
   // 3. check if there are any errors after running the rules.
   var validationErrors = validationResult(req);
-  console.log(validationErrors);
+  //console.log(validationErrors);
   // 4. if errors, return the error message
   if (!validationErrors.isEmpty()) {
     return res.render("home", {
