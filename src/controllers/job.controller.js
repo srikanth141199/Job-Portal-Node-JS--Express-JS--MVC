@@ -1,6 +1,8 @@
 // This class handles the Job related tasks
 import JobModel from "../models/job.model.js";
 
+import nodemailer from 'nodemailer';
+
 export default class JobController {
     // Get job details for a specific page
     getJobDetails(req, res) {
@@ -101,6 +103,32 @@ export default class JobController {
         JobModel.updateApplicants(req.body);
         const jobFound = JobModel.getJobID(req.body.id);
         res.render('jobDetails', {job: jobFound, userEmail: req.session.userEmail});
+
+        //to send email once applied
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'kolleparasrikanth@gmail.com',
+                pass: 'squtswhisebfeosf'
+            }
+        });
+
+        // Prepare the email content
+        let mailOptions = {
+            from: 'kolleparasrikanth@gmail.com',
+            to: req.body.email, //applicant's email address
+            subject: 'Application Submitted',
+            text: 'Your application for the job has been submitted successfully.'
+        };
+
+        // Send the email
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
     }
 
     // Render the 404 page
