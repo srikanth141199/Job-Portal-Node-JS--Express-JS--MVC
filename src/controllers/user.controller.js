@@ -3,7 +3,7 @@ import UserModel from '../models/user.model.js';
 export default class UserController {
 
   getHome(req,res){
-    res.render('home');
+    res.render('home', {userEmail: req.session.userEmail});
   }
 
   getRegister(req, res) {

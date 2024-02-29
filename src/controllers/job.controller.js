@@ -20,7 +20,7 @@ export default class JobController {
 
         const totalPages = Math.ceil(totalJobs / limit);
 
-        res.render('jobs', { jobs: jobs, totalPages: totalPages, currentPage: page });
+        res.render('jobs', { jobs: jobs, totalPages: totalPages, currentPage: page, userEmail: req.session.userEmail });
     }
 
     getSelectedJobDetails(req, res, next){
@@ -42,7 +42,7 @@ export default class JobController {
 
         const totalPages = Math.ceil(totalJobs / limit);
 
-        res.render('jobs', { jobs: jobs, totalPages: totalPages, currentPage: page });
+        res.render('jobs', { jobs: jobs, totalPages: totalPages, currentPage: page, userEmail: req.session.userEmail });
     }
 
     getJobApplicants(req, res){
@@ -50,24 +50,24 @@ export default class JobController {
         //console.log('id :', id);
         const jobFound = JobModel.getJobID(id);
         //console.log(jobFound);
-        res.render("jobApplicants", {job: jobFound});
+        res.render("jobApplicants", {job: jobFound, userEmail: req.session.userEmail});
     }
 
     getUpdateJob(req, res){
         const id = req.params.id;
         const jobFound = JobModel.getJobID(id);
-        res.render("jobUpdate", {job: jobFound});
+        res.render("jobUpdate", {job: jobFound, userEmail: req.session.userEmail});
     }
 
     postUpdateJob(req, res){
         //const id = req.params.id;
-        console.log("1 befor applicants update",req.body);
+        //console.log("1 befor applicants update",req.body);
         req.body.applicants = JSON.parse(req.body.applicants);
         req.body.applicantsCount = req.body.applicants.length;
-        console.log("2 after applicants update",req.body);
+        //console.log("2 after applicants update",req.body);
         JobModel.update(req.body)
         const jobFound = JobModel.getJobID(req.body.id);
-        console.log("3 after updating job details",req.body);
+        //console.log("3 after updating job details",req.body);
         res.render('jobDetails', {job: jobFound, userEmail: req.session.userEmail});
     }
 
